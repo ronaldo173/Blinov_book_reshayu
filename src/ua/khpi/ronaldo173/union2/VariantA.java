@@ -66,6 +66,28 @@ public final class VariantA {
 	}
 
 	/**
+	 * Check if an array palindrom.
+	 * 
+	 * @param word
+	 *            expect array of letters for check is it palindrom
+	 * @return true if yes
+	 */
+	public static boolean isPalindrom(final char[] word) {
+		int i1 = 0;
+		int i2 = word.length - 1;
+
+		while (i2 > i1) {
+			if (word[i1] != word[i2]) {
+				return false;
+			}
+			++i1;
+			--i2;
+		}
+		return true;
+
+	}
+
+	/**
 	 * Enter point to class.
 	 * 
 	 * @param args
@@ -79,19 +101,8 @@ public final class VariantA {
 		double[] sortedByLength = sortByLength(arr);
 		System.out.println(Arrays.toString(sortedByLength));
 
-		final int[] arr1 = { 12, 13, 15 };
-		System.out.println(Arrays.toString(arr1));
-		for (int i = 0; i < arr1.length; i++) {
-			arr1[i] *= 2;
-		}
-		System.out.println(Arrays.toString(arr1));
-
-		final String string = "bla_bla";
-		System.out.println(string);
-
-		final Integer i1 = new Integer(222);
-		System.out.println(i1);
-
+		boolean palindrom = isPalindrom("abcdcba".toCharArray());
+		System.out.println("palindrom: " + palindrom);
 	}
 
 	/**
